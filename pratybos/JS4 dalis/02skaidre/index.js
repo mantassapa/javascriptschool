@@ -25,11 +25,19 @@ const leFamily = {
       }
   }
 
+let lyg = 0
+let nelyg = 0
 for (let i in leFamily){
-    let lyg = (leFamily[i]%2==0).count(i)
-    console.log(lyg)
+    if(leFamily[i]%2==0){
+      lyg++}
+    else{
+      nelyg++
+    }}
+     
+console.log(lyg)
+console.log(nelyg)
     
-}
+
 
   //pratybos, pavyzdziai
 // let person = {
