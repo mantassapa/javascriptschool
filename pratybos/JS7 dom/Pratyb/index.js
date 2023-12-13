@@ -56,7 +56,7 @@ const mybutton = document.createElement("button")
 const img = document.createElement("img")
 console.log(mybutton);
 
-//varijantai kaipp iterti teksta
+//varijantai kaip iterti teksta
 mybutton.innerText = "click"
 // mybutton.textContent = "click"
 // mybutton.innerHTML = "click"

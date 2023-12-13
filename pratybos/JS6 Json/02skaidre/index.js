@@ -31,3 +31,4 @@ data.forEach((el, index)=>
 })
 console.log(sal);
 localStorage.setItem("countries", JSON.stringlify(sal))
+
