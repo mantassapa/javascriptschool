@@ -32,7 +32,7 @@ const p4 = document.createElement('p')
 div.append(p4)
 const p5 = document.createElement('p')
 div.append(p5)
-const masyvas = [p,p1,p2,p3,p4,p5]
+const masyvas = [p1,p2,p3,p4,p5]
 const masyvoIlgis = masyvas.length
 
 for (let index=0; index<masyvoIlgis; index+=1){
@@ -45,6 +45,17 @@ masyvas[index].innerText="this is the new text"
 masyvas[index].style.backgroundColor="black"
 masyvas[index].style.color="red"
 }
+//04 su foreac
+// array.forEach((el, index) =>{
+//     if(index%2===0){
+//         el.style.color = 'red'
+//         el.style.backgroundColor="black"
+//     }else{
+//         el.style.color = 'white'
+//         el.style.backgroundColor="green"
+//     }
+// })
+
 //05
 const body = document.querySelector('body')
 const form = document.createElement('form')
@@ -64,3 +75,5 @@ submit.addEventListener("click", (e) => {
     console.log(input.value);
     p.innerText=(input.value)
 })
+
+//06
