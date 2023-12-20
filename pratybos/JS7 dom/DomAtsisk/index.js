@@ -186,6 +186,7 @@ Todo.forEach((el)=>{
     delbutton.addEventListener('click',(el)=>{
         el.preventDefault()
         if(indexas>=0){
+        rowidnumber--
         Todo.splice(indexas,1)
         row.remove()
         }
@@ -270,6 +271,7 @@ FormButton.addEventListener("click",(el)=>{
             delbutton.addEventListener('click',(el)=>{
                 el.preventDefault()
                 if(indexas>=0){
+                    rowidnumber--
                 Todo.splice(indexas,1)
                 row.remove()
                 }
