@@ -1,9 +1,11 @@
 "use strict"
-//pirma skaidre----------
+//pirma uzduotis...
 const body = document.querySelector("body")
 const div = document.createElement("div")
+const main = document.createElement('main')
 div.setAttribute("class","PirmaSkaidre")
-body.append(div)
+body.append(main)
+main.append(div)
 const firstButton = document.createElement("button")
 firstButton.innerText="Padidinti"
 firstButton.style.backgroundColor="red"
@@ -36,11 +38,11 @@ SecondButton.addEventListener("click",(el)=>{
     }else{SecondButton.style.backgroundColor="green";}
 
 })
-//pabaiga pirmos skaidres^^^^^^^^^^
-//antra skaidre
+//pabaiga pirmos uzduoties^^^^^^^^^^
+//antra uzduotis...
 const div2 = document.createElement('div')
 div2.setAttribute('class',"AntraSkaidre")
-body.append(div2)
+main.append(div2)
 const inputOne = document.createElement('input')
 inputOne.setAttribute("type","number")
 inputOne.setAttribute("placeholder","nenumeruotu")
@@ -54,25 +56,28 @@ div2.append(inputOne,inputTwo,inputButton)
 
 inputButton.addEventListener("click",(el)=>{
     el.preventDefault()
+    const allul = document.querySelectorAll('ul')
+    allul.forEach((el)=>{el.remove()})///resetina 
 
     for (let i = 0; i<inputOne.value; i++){ 
         const ul = document.createElement('ul')
         const li = document.createElement('li')
         li.innerText="unordered"
         ul.append(li)
-        div2.append(ul)}
-const Allli = document.querySelectorAll("li")
-for(let i =0;i<inputTwo.value;i++){
-        Allli.forEach((el)=>{
-            const ol = document.createElement("ol")
-            el.append(ol)
+        div2.append(ul)
+        const ol = document.createElement("ol")
+        
+        for(let i =0;i<inputTwo.value;i++){
+            li.append(ol)
             const insideLi = document.createElement("li")
             insideLi.innerText="ordered"
             ol.append(insideLi)
-
-        })
-
+                }
     }
 })
+//antros uzduoties pabaiga^^^^^^^^^^^^^^^
+//trecia uzduotis...
 
+const form = document.createElement('form')
+body.append(form)
 
