@@ -184,7 +184,7 @@ Todo.forEach((el, index)=>{
     const rowifid = Todo.includes(rowidinfo)
     const indexas = Todo.indexOf(el)
 
-    // console.log(indexas);
+    console.log(indexas);
     delbutton.addEventListener('click',(el)=>{
         el.preventDefault()
         if(indexas>=0){
@@ -235,10 +235,9 @@ FormButton.addEventListener("click",(el)=>{
             
             TodoLength++
 
-    //-------------after reload pataisyta kodo dalis-------
-            //checkbox event listener==
-            idnumber++
-            checkbox.setAttribute('id', idnumber)
+//-------------after reload pataisyta kodo dalis-------
+            //checkbox event listener=
+            checkbox.setAttribute('id', idnumber++)
             const idinfo = checkbox.getAttribute('id')
             const ifid = CheckArray.includes(idinfo)
         
@@ -266,16 +265,13 @@ FormButton.addEventListener("click",(el)=>{
             //delete button event==
             row.setAttribute("id", rowidnumber++)
             const rowidinfo = row.getAttribute("id")
-            const rowifid = Todo.includes(rowidinfo)
-            const indexas = idnumber
-            console.log(rowidinfo);
-            // console.log(rowidinfo.indexOf());
-        
-            console.log(indexas);
+            const indexas = Todo.indexOf(el)
+
+            console.log(indexas.indexOf(rowidinfo));
             delbutton.addEventListener('click',(el)=>{
                 el.preventDefault()
+                console.log(indexas);
                 if(indexas>=-1){
-                    // idnumber--
                 Todo.splice(indexas,1)
                 row.remove()
                 }
