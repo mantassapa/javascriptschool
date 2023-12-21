@@ -126,7 +126,7 @@ const LSCcheckArray = localStorage.getItem('CheckArray')
 const CheckArray = LSCcheckArray===null?[]:JSON.parse(LSCcheckArray)
 
 //after reload table rows and columns
-Todo.forEach((el)=>{
+Todo.forEach((el, index)=>{
     const row = document.createElement('tr')
     const p = document.createElement('p')
     const col = document.createElement('td')
@@ -156,7 +156,7 @@ Todo.forEach((el)=>{
     const ifid = CheckArray.includes(idinfo)
 
     checkbox.addEventListener('change', function() {
-        if (this.checked) {
+        if (checkbox.checked) {
             row.style.backgroundColor="green"
             if(CheckArray.includes(idinfo)){
             }else(CheckArray.push(idinfo))  
@@ -167,13 +167,15 @@ Todo.forEach((el)=>{
             }
         row.style.backgroundColor="white"
       }
+
+    //   checkbox.checked=true
       localStorage.setItem('CheckArray', JSON.stringify(CheckArray))
       
     });
     // data after reload==
     if(CheckArray.includes(idinfo)){
         row.style.backgroundColor="green"
-        checkbox.checked==true
+        checkbox.checked=true
     }
 
     //delete button event==
@@ -186,7 +188,7 @@ Todo.forEach((el)=>{
     delbutton.addEventListener('click',(el)=>{
         el.preventDefault()
         if(indexas>=0){
-        rowidnumber--
+        // rowidnumber--
         Todo.splice(indexas,1)
         row.remove()
         }
@@ -266,12 +268,14 @@ FormButton.addEventListener("click",(el)=>{
             const rowidinfo = row.getAttribute("id")
             const rowifid = Todo.includes(rowidinfo)
             const indexas = idnumber
+            console.log(rowidinfo);
+            // console.log(rowidinfo.indexOf());
         
-            // console.log(indexas);
+            console.log(indexas);
             delbutton.addEventListener('click',(el)=>{
                 el.preventDefault()
-                if(indexas>=0){
-                    rowidnumber--
+                if(indexas>=-1){
+                    // idnumber--
                 Todo.splice(indexas,1)
                 row.remove()
                 }
