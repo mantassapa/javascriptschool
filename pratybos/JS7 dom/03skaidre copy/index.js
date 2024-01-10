@@ -39,39 +39,41 @@ const LSMas = localStorage.getItem("Likes")
 const Likes = LSMas===null?[]:JSON.parse(LSMas)
 
 
+
 const allbutton = document.querySelectorAll('button')
 allbutton.forEach((el)=>{
     el.style.fontSize="xxx-large"
     el.style.backgroundColor="transparent"
     el.style.border="none"
-    el.style.color="white"
+    // el.style.color="white"
     el.style.position="absolute"
     idCount++
     el.setAttribute('id', idCount)
     const idinfo = el.getAttribute('id')
 
+
     el.addEventListener("click", (ele)=>{
         ele.preventDefault()
-        if (el.style.color==="white"){
-            el.style.color="red"
+        if (el.style.color==="red"){
+            el.style.color="black"
             const ifid = Likes.includes(idinfo)
             if(ifid){
-                const index = Likes.indexOf(idinfo)
-                if(index>=0){Likes.splise(index, 1)}
-                else{
-                el.style.color="white"
-                // counter-=1
-                Likes.push(idinfo)}}
-                
-            // counter+=1
-            // Likes.push(counter)
-      
-
-        }
+                const indexa = Likes.indexOf(ifid)
+                if(indexa>=-1){
+                    console.log(`fuck this`);
+                    Likes.splice(indexa, 1)}
+            }
+        }   
+        else{
+            el.style.color="red"
+            Likes.push(idinfo)
+        }      
         localStorage.setItem("Likes", JSON.stringify(Likes))
+        })
+    if(Likes.includes(idinfo)){el.style.color="red"}
 
-    })
 })
+
 
 // const random = (array) => {
 //     const randomPic = Math.floor(Math.random() * array.length);
