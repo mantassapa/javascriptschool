@@ -122,11 +122,11 @@ submitas.addEventListener("click",(event)=>{
     // inputas.value=""
     forma.reset()
 })
-
 submitas.addEventListener("click", (e)=>{
     e.preventDefault()
     console.log(e.target);
 })
+
 
 const editInput = document.querySelector("#edit")
 const editas = document.querySelector("#editbutton")
@@ -145,3 +145,4 @@ const founded = fromLS.findIndex(el=> el.id ===editable)
 console.log(founded);
 })
 inputas.value=fromLS[founded].name
+
