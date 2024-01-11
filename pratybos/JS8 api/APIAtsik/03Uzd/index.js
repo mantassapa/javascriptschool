@@ -30,9 +30,8 @@ main.append(input,button)
 // on load-------------------------------
 const getPhotos = async()=>{
     const result = await fetch(`https://openaccess-api.clevelandart.org/api/artworks/?&limit=20&has_image=1`)
-    console.log(result);
     const datas = await result.json()
-    console.log(datas.data);
+    
 
     datas.data.forEach(el=> {
         const insideCard = document.createElement('div');
@@ -86,7 +85,6 @@ const getPhoto= async(event)=>{
         const infoAll = document.querySelectorAll('.errorName')
         infoAll.forEach((el)=>{el.remove()})
 
-        console.log(data2.data);
 
         data2.data.map((el)=>{
             const insideCard = document.createElement('div');
