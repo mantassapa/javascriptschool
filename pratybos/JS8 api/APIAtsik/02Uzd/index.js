@@ -33,6 +33,8 @@ const getMovie= async(event)=>{
     const data = await result.json()
 
     if(data.Response === "False"){
+        const allInsCards = document.querySelectorAll(".insideCard")
+        allInsCards.forEach((card=>card.remove()))
         const infoAll = document.querySelectorAll('.errorName')
         infoAll.forEach((el)=>{el.remove()})
         const infoElement = document.createElement('h2')
