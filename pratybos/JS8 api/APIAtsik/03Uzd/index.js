@@ -30,9 +30,7 @@ main.append(input,button)
 // on load-------------------------------
 const getPhotos = async()=>{
     const result = await fetch(`https://openaccess-api.clevelandart.org/api/artworks/?&limit=20&has_image=1`)
-    console.log(result);
     const datas = await result.json()
-    console.log(datas.data);
 
     datas.data.forEach(el=> {
         const insideCard = document.createElement('div');
@@ -47,7 +45,7 @@ const getPhotos = async()=>{
         poster.src=el.images.web.url
         poster.style.width="200px"
         poster.alt=el.title
-        console.log(el.creators);
+        
         
         const title = document.createElement('h2');
         title.innerText=el.title
@@ -86,7 +84,6 @@ const getPhoto= async(event)=>{
         const infoAll = document.querySelectorAll('.errorName')
         infoAll.forEach((el)=>{el.remove()})
 
-        console.log(data2.data);
 
         data2.data.map((el)=>{
             const insideCard = document.createElement('div');
@@ -101,7 +98,6 @@ const getPhoto= async(event)=>{
             poster.src=el.images.web.url
             poster.style.width="200px"
             poster.alt=el.title
-            console.log(el.creators);
             
             const title = document.createElement('h2');
             title.innerText=el.title

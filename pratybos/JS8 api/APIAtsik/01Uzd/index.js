@@ -19,9 +19,7 @@ const getPhoto = async()=>{
     const allImg = document.querySelectorAll('img')
     allImg.forEach((el)=>{el.remove()})
     const result = await fetch(`https://dog.ceo/api/breeds/image/random`)
-    console.log(result);
     const data = await result.json()
-    console.log(data);
     const img = document.createElement('img')
     img.src=data.message
     img.style.width="500px"
