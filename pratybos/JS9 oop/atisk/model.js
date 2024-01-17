@@ -14,11 +14,13 @@ function buttons(){
     body.style.display="flex"
     body.style.flexDirection="column"
     body.style.alignItems="center"
+    body.style.backgroundColor="purple"
+    body.style.gap="50px"
     const div = document.createElement("div")
     div.style.display="flex"
     div.style.flexDirection="row"
-    div.style.gap="10px"
-    div.style.marginBottom="50px"
+    div.style.gap="100px"
+    div.style.marginBottom="20px"
     div.setAttribute("class", "buttons")
     body.append(div)
 
@@ -31,20 +33,41 @@ function buttons(){
     const bird = document.createElement("button")
     bird.setAttribute('id', "bird")
     bird.innerText="bird"
-
     div.append(dog, cat, bird)
+
+    const allBtn = document.querySelectorAll('button')
+    allBtn.forEach((el)=>{
+        el.style.backgroundColor="violet"
+        el.style.borderColor="white"
+        el.style.borderRadius="15px"
+        el.style.width="100px"
+        el.style.height="40px"
+    })
 }
 export {buttons}
 
 function dogforma() {
     const forms = document.querySelectorAll('form')
     forms.forEach((el)=>{el.remove()})
+    if(document.getElementById('result')!==null){document.getElementById('result').remove()}
     const body = document.querySelector("body")
     const form = document.createElement("form")
     form.style.display="flex"
     form.style.flexDirection="column"
-    form.style.gap="10px"
-    body.append(form)
+    form.style.alignItems="center"
+    form.style.gap="20px"
+    form.style.backgroundColor="black"
+    form.style.width="250px"
+    form.style.padding="50px"
+    form.style.borderRadius="50px"
+    const divRes= document.createElement('div')
+    divRes.setAttribute("id",'result')
+    divRes.style.display="flex"
+    divRes.style.flexDirection="row"
+    divRes.style.flexWrap="wrap"
+    divRes.style.alignItems="center"
+    divRes.style.gap="10px"
+    body.append(form,divRes)
 
     const inputName = document.createElement('input')
     inputName.setAttribute('placeholder', "Name")
@@ -79,6 +102,12 @@ function dogforma() {
     const submit = document.createElement("button")
     submit.setAttribute('id', "submit")
     submit.innerText="submit"
+    submit.style.width="50px"
+    submit.style.backgroundColor="violet"
+    submit.style.borderColor="white"
+    submit.style.borderRadius="15px"
+    submit.style.width="80px"
+    submit.style.height="30px"
     form.append(inputName,inputAge,inputLegs,inputFur,inputTail,inputMuzzle, submit)
     const allInput = document.querySelectorAll('form>input')
     allInput.forEach((el)=>{el.style.textAlign="center" })
@@ -88,13 +117,25 @@ export{dogforma}
 function catforma() {
     const forms = document.querySelectorAll('form')
     forms.forEach((el)=>{el.remove()})
+    if(document.getElementById('result')!==null){document.getElementById('result').remove()}
     const body = document.querySelector("body")
     const form = document.createElement("form")
     form.style.display="flex"
     form.style.flexDirection="column"
-    form.style.gap="10px"
-    form.style.textAlign="center"
-    body.append(form)
+    form.style.alignItems="center"
+    form.style.gap="20px"
+    form.style.backgroundColor="grey"
+    form.style.width="250px"
+    form.style.padding="50px"
+    form.style.borderRadius="50px"
+    const divRes= document.createElement('div')
+    divRes.setAttribute("id",'result')
+    divRes.style.display="flex"
+    divRes.style.flexDirection="row"
+    divRes.style.flexWrap="wrap"
+    divRes.style.alignItems="center"
+    divRes.style.gap="10px"
+    body.append(form,divRes)
 
     const inputName = document.createElement('input')
     inputName.setAttribute('placeholder', "Name")
@@ -129,6 +170,12 @@ function catforma() {
     const submit = document.createElement("button")
     submit.setAttribute('id', "submit")
     submit.innerText="submit"
+    submit.style.width="50px"
+    submit.style.backgroundColor="violet"
+    submit.style.borderColor="white"
+    submit.style.borderRadius="15px"
+    submit.style.width="80px"
+    submit.style.height="30px"
     form.append(inputName,inputAge,inputLegs,inputFur,inputTail,inputWhiskers, submit)
     const allInput = document.querySelectorAll('form>input')
     allInput.forEach((el)=>{el.style.textAlign="center" })
@@ -138,13 +185,25 @@ export{catforma}
 function birdforma() {
     const forms = document.querySelectorAll('form')
     forms.forEach((el)=>{el.remove()})
+    if(document.getElementById('result')!==null){document.getElementById('result').remove()}
     const body = document.querySelector("body")
     const form = document.createElement("form")
     form.style.display="flex"
     form.style.flexDirection="column"
-    form.style.gap="10px"
-    form.style.textAlign="center"
-    body.append(form)
+    form.style.alignItems="center"
+    form.style.gap="20px"
+    form.style.backgroundColor="orange"
+    form.style.width="250px"
+    form.style.padding="50px"
+    form.style.borderRadius="50px"
+    const divRes= document.createElement('div')
+    divRes.setAttribute("id",'result')
+    divRes.style.display="flex"
+    divRes.style.flexDirection="row"
+    divRes.style.flexWrap="wrap"
+    divRes.style.alignItems="center"
+    divRes.style.gap="10px"
+    body.append(form,divRes)
 
     const inputName = document.createElement('input')
     inputName.setAttribute('placeholder', "Name")
@@ -179,6 +238,12 @@ function birdforma() {
     const submit = document.createElement("button")
     submit.setAttribute('id', "submit")
     submit.innerText="submit"
+    submit.style.width="50px"
+    submit.style.backgroundColor="violet"
+    submit.style.borderColor="white"
+    submit.style.borderRadius="15px"
+    submit.style.width="80px"
+    submit.style.height="30px"
     form.append(inputName,inputAge,inputLegs,inputWings,inputBeak, submit)
     const allInput = document.querySelectorAll('form>input')
     allInput.forEach((el)=>{el.style.textAlign="center" })
