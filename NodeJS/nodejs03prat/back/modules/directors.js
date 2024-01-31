@@ -16,4 +16,6 @@ const directorSchema = new mongoose.Schema({
     date:{type:Date, defoult: Date.now}
 })
 
-const Director = mongoose.Model("Director", directorSchema)
+const Director = mongoose.model("Director", directorSchema)
+
+module.exports = Director
