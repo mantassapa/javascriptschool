@@ -11,11 +11,10 @@ const directorSchema = new mongoose.Schema({
     },
     oscars:{
         type: Number,
-        required: [true, "please add info"]
+        required: [true, "please add oscars"]
     },
     date:{type:Date, defoult: Date.now}
 })
 
 const Director = mongoose.model("Director", directorSchema)
-
 module.exports = Director

@@ -1,19 +1,25 @@
 const mongoose = require("mongoose")
 
-const moviesSchema = new mongoose.Schema({
+const movieSchema = new mongoose.Schema({
+    movieAuthor:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Author"
+    },
     title:{
         type: String,
-        required: [true, "please add title"]
-    },
-    about:{
-        type: String,
-        required: [true, "please add info"]
+        required:[true, "please add title"]
     },
     year:{
         type: Number,
-        required: [true, "please add year"]
+        required:[true, "please add years"]
+    },
+    genre:{
+        type: String,
+        required:[true, "please add genre"]
     },
     date:{type:Date, defoult: Date.now}
 })
 
-module.exports = moviesSchema
+const Movie = mongoose.model("Movies", movieSchema)
+
+module.exports = Movie

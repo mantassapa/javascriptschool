@@ -1,0 +1,8 @@
+65bb4bc4fc79dc8f64e30482  author
+65bb51b2264903a604f6629c  movie
+{
+    "movieAuthor":"65bb4bc4fc79dc8f64e30482",
+    "title":"cars",
+    "year": 2010,
+    "genre": "horror" 
+}
