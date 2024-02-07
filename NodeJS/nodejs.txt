@@ -1,0 +1,20 @@
+node -version
+
+namuose npm install
+
+npx kill-port 5000
+
+npx run start
+
+npx = running vs npm used mor for install
+
+common instals: {
+    "bcrypt"
+    "cors"
+    "dotenv"
+    "express"
+    "express-async-handler"
+    "jsonwebtoken"
+    "mongoose"
+    "nodemon"
+}
