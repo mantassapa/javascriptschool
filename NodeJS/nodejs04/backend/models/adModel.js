@@ -18,6 +18,10 @@ const adSchema = new mongoose.Schema({
         type:Number,
         required:[true, "please add info price"]
     },
+    url:{
+        type:String,
+        required:[true, "please add url"]
+    },
     },
     {
         timestamp:true

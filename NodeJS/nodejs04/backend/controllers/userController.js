@@ -11,12 +11,12 @@ const registerUser = asyncHandler(async(req,res)=>{
     const{firstname, email, password}= req.body
 
     if(!firstname||!email||!password){
-        res.status(400)
+        res.status(401)
         throw new Error("Please fill all fields")
     }
     const userExist = await User.findOne({email})
     if(userExist){
-        res.status(400)
+        res.status(402)
         throw new Error("User already exists")
     }
 
@@ -39,7 +39,7 @@ const registerUser = asyncHandler(async(req,res)=>{
 
         })
     }else{
-        res.status(400)
+        res.status(403)
         throw new Error("invalid user data")
     }
 })
@@ -62,10 +62,10 @@ const loginUser = asyncHandler(async(req, res)=>{
             _id:user.id,
             firstname: user.firstname,
             email:user.email,
-            taken:generateToken(user._id)
+            token:generateToken(user._id)
         })
     }else{ 
-        res.status(400)
+        res.status(405)
         throw new Error("ivalid crediancials")
     }
 })
