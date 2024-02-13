@@ -1,10 +1,10 @@
 "use strict"
 export class Reader{
-    constructor(name, surname, card_nr, taken_book){
+    constructor(name, surname, card_nr, token_book){
         this.name = name
         this.surname=surname
         this.card_nr=card_nr
-        this.taken_book=taken_book
+        this.token_book=token_book
     }
     getReaderInfo(){}
 }
